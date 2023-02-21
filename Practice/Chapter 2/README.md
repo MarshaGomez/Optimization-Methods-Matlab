@@ -5,6 +5,11 @@
 Answer the following questions for any of the nonlinear optimization problems reported below:
 
 * a) Is it a convex optimization problem?
+
+If the objective function is a quadratic function, then it needs a *positive semidefinite* (convex) or *positive definite* (strongly convex) Hessian. A quadratic function is defined as
+
+$$f(x) = \frac{1}{2}x^T Qx+c^T x$$
+
 * b) Do global optimal solutions exist? Why?
 * c) Does the Abadie constraints qualification hold? Why?
 * d) Find all the solutions of the KKT system associated with the problem.
