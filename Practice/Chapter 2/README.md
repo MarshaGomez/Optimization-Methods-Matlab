@@ -6,9 +6,17 @@ Answer the following questions for any of the nonlinear optimization problems re
 
 * a) Is it a convex optimization problem?
 
+### Quadratic Function
+
 If the objective function is a quadratic function, then it needs a *positive semidefinite* (convex) or *positive definite* (strongly convex) Hessian. A quadratic function is defined as
 
 $$f(x) = \frac{1}{2}x^T Qx+c^T x$$
+
+### Linear Function
+
+If the objective function is a linear function, it is *convex* but not strongly convex.
+
+
 
 * b) Do global optimal solutions exist? Why?
 * c) Does the Abadie constraints qualification hold? Why?
@@ -17,33 +25,29 @@ $$f(x) = \frac{1}{2}x^T Qx+c^T x$$
 * f) Write the Lagrangian dual problem and try to solve it.
 
 
-$$1. \left\{\begin{matrix} \text{minimize} & -x_{1}+x_{2}^2\\ \text{subject to} & -x_{1}^2-x_{2}^2+4 \leq 0 \end{matrix}\right.$$
-[Exercise 1](Chapter_1_1.pdf)
+![Index](img/1.png)
+[Exercise 1](Chapter_2_1.pdf)
 
-$$2. \left\{\begin{matrix}
- \text{minimize} & -x_{1}^3+x_{2}^3\\ 
- \text{subject to} & -x_{1}-1 \leq 0\\
-  & -x_{2}-1 \leq 0
-\end{matrix}\right.$$
-[Exercise 2](Chapter_1_2.pdf)
+![Index](img/2.png)
+[Exercise 2](Chapter_2_2.pdf)
 
 ![Index](img/3.png)
-[Exercise 3](Chapter_1_3.pdf)
+[Exercise 3](Chapter_2_3.pdf)
 
 ![Index](img/4.png)
-[Exercise 4](Chapter_1_4.pdf)
+[Exercise 4](Chapter_2_4.pdf)
 
 ![Index](img/5.png)
-[Exercise 5](Chapter_1_5.pdf)
+[Exercise 5](Chapter_2_5.pdf)
 
 ![Index](img/6.png)
-[Exercise 6](Chapter_1_6.pdf)
+[Exercise 6](Chapter_2_6.pdf)
 
 ![Index](img/7.png)
-[Exercise 7](Chapter_1_7.pdf)
+[Exercise 7](Chapter_2_7.pdf)
 
 ![Index](img/8.png)
-[Exercise 8](Chapter_1_8.pdf)
+[Exercise 8](Chapter_2_8.pdf)
 
 ![Index](img/9.png)
-[Exercise 9](Chapter_1_9.pdf)
+[Exercise 9](Chapter_2_9.pdf)
