@@ -4,12 +4,12 @@
 
 Answer the following questions for any of the nonlinear optimization problems reported below:
 
-a) Is it a convex optimization problem?
-b) Do global optimal solutions exist? Why?
-c) Does the Abadie constraints qualification hold? Why?
-d) Find all the solutions of the KKT system associated with the problem.
-e) Find local and global optimal solutions exploiting the optimality conditions.
-f) Write the Lagrangian dual problem and try to solve it.
+* a) Is it a convex optimization problem?
+* b) Do global optimal solutions exist? Why?
+* c) Does the Abadie constraints qualification hold? Why?
+* d) Find all the solutions of the KKT system associated with the problem.
+* e) Find local and global optimal solutions exploiting the optimality conditions.
+* f) Write the Lagrangian dual problem and try to solve it.
 
 ![Index](img/1.png)
 [Exercise 1](Chapter_1_1.pdf)
