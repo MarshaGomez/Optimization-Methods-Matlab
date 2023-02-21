@@ -12,28 +12,28 @@ e) Find local and global optimal solutions exploiting the optimality conditions.
 f) Write the Lagrangian dual problem and try to solve it.
 
 ![Index](img/1.png)
-[Chapter_1](Chapter_1_1.pdf)
+[Exercise 1](Chapter_1_1.pdf)
 
 ![Index](img/2.png)
-[Chapter_1](Chapter_1_2.pdf)
+[Exercise 2](Chapter_1_2.pdf)
 
 ![Index](img/3.png)
-[Chapter_1](Chapter_1_3.pdf)
+[Exercise 3](Chapter_1_3.pdf)
 
 ![Index](img/4.png)
-[Chapter_1](Chapter_1_4.pdf)
+[Exercise 4](Chapter_1_4.pdf)
 
 ![Index](img/5.png)
-[Chapter_1](Chapter_1_5.pdf)
+[Exercise 5](Chapter_1_5.pdf)
 
 ![Index](img/6.png)
-[Chapter_1](Chapter_1_6.pdf)
+[Exercise 6](Chapter_1_6.pdf)
 
 ![Index](img/7.png)
-[Chapter_1](Chapter_1_7.pdf)
+[Exercise 7](Chapter_1_7.pdf)
 
 ![Index](img/8.png)
-[Chapter_1](Chapter_1_8.pdf)
+[Exercise 8](Chapter_1_8.pdf)
 
 ![Index](img/9.png)
-[Chapter_1](Chapter_1_9.pdf)
+[Exercise 9](Chapter_1_9.pdf)
