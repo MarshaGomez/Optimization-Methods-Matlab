@@ -16,10 +16,18 @@ $$f(x) = \frac{1}{2}x^T Qx+c^T x$$
 * e) Find local and global optimal solutions exploiting the optimality conditions.
 * f) Write the Lagrangian dual problem and try to solve it.
 
-![Index](img/1.png)
+
+$$1. \left\{\begin{matrix}
+ \text{minimize} & -x_{1}+x_{2}^2\\ 
+ \text{subject to} & -x_{1}^2-x_{2}^2+4 \leq 0
+\end{matrix}\right.$$
 [Exercise 1](Chapter_1_1.pdf)
 
-![Index](img/2.png)
+$$2. \left\{\begin{matrix}
+ \text{minimize} & -x_{1}^3+x_{2}^3\\ 
+ \text{subject to} & -x_{1}-1 \leq 0\\
+  & -x_{2}-1 \leq 0
+\end{matrix}\right.$$
 [Exercise 2](Chapter_1_2.pdf)
 
 ![Index](img/3.png)
