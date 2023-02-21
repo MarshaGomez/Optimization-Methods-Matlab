@@ -17,10 +17,7 @@ $$f(x) = \frac{1}{2}x^T Qx+c^T x$$
 * f) Write the Lagrangian dual problem and try to solve it.
 
 
-$$1. \left\{\begin{matrix}
- \text{minimize} & -x_{1}+x_{2}^2\\ 
- \text{subject to} & -x_{1}^2-x_{2}^2+4 \leq 0
-\end{matrix}\right.$$
+$$1. \left\{\begin{matrix} \text{minimize} & -x_{1}+x_{2}^2\\ \text{subject to} & -x_{1}^2-x_{2}^2+4 \leq 0 \end{matrix}\right.$$
 [Exercise 1](Chapter_1_1.pdf)
 
 $$2. \left\{\begin{matrix}
