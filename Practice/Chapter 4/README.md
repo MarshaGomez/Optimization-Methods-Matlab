@@ -2,12 +2,16 @@
 
 ## Support Vector Machines for (supervised) classification problems
 
-[Exercise 4.1.]() **Linear SVM.** Find the separating hyperplane with maximum margin for the data set given:
+[Exercise 4.1.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_1.mlx) **Linear SVM.** Find the separating hyperplane with maximum margin for the data set given:
 
 ````matlab
-Set A:
+close all;
+clear;
+clc;
 
-    0.4952    6.8088    
+matlab.lang.OnOffSwitchState = 1;
+
+A=[ 0.4952    6.8088    
     2.6505    8.9590    
     3.4403    5.3366    
     3.4010    6.1624    
@@ -36,11 +40,9 @@ Set A:
     0.9469    5.1476   
     0.9718    5.5951   
     0.4309    7.5763   
-    2.2699    7.1371  
-   
-Set B:
-   
-   7.2450    3.4422
+    2.2699    7.1371 ];
+
+B=[7.2450    3.4422
    7.7030    5.0965 
    5.7670    2.8791 
    3.6610    1.5002  
@@ -69,8 +71,56 @@ Set B:
    9.5110    1.3298 
    9.3170    1.0890  
    6.5170    1.4606   
-   9.8621    4.3674   
+   9.8621    4.3674]; 
    
+% Show values distribution
+xlim = ([0 10]);
+ylim = ([0 10]);
+plot(A(:,1), A(:,2), "r*", B(:,1), B(:,2), "b*");
 ````
-   
-   
+
+![image](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_1_1.png)
+
+````matlab
+% Training Set
+T = [A;B];
+
+% Set Values
+nA = size(A,1);
+nB = size(B,1);
+
+Q = [1 0 0
+     0 1 0
+     0 0 0];
+
+D = [-A -ones(nA,1)
+      B  ones(nB,1)];
+
+d = -ones(nA+nB, 1);
+
+f = zeros(3,1);
+
+% Set Problem
+options = optimset("LargeScale", "off", "Display", "off");
+lambda = quadprog(Q,f,D,d,[],[],[],[],[],options);
+
+% Set w and b
+w = lambda(1:2);
+b = lambda(3);
+
+% Plot with the Max Margins 
+x = 0:0.1:10;
+u = (-w(1)/w(2)).*x - b/w(2);
+v = (-w(1)/w(2)).*x + (1-b)/w(2);
+vv = (-w(1)/w(2)).*x + (-1-b)/w(2);
+
+plot(A(:,1), A(:,2), "r*", B(:,1), B(:,2), "b*");
+hold on
+xlim = ([0 10]);
+ylim = ([0 10]);
+plot(x,u, "k-", x,v,"r-", x,vv, "b-");
+````
+
+![image](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_1_2.png)
+
+
