@@ -78,8 +78,7 @@ xlim = ([0 10]);
 ylim = ([0 10]);
 plot(A(:,1), A(:,2), "r*", B(:,1), B(:,2), "b*");
 ````
-
-![image](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_1_1.png)
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_1_1.png" width="300" height="300" />
 
 ````matlab
 % Training Set
@@ -121,7 +120,7 @@ ylim = ([0 10]);
 plot(x,u, "k-", x,v,"r-", x,vv, "b-");
 ````
 
-![image](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_1_2.png)
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_1_2.png" width="300" height="300" />
 
 [Exercise 4.2](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_1.mlx) **Linear SVM. Dual Model** Find the separating hyperplane with maximum margin for the data set given:
 
@@ -193,8 +192,7 @@ plot(A(:,1), A(:,2), 'r*', ...
 title("DataSet");
 
 ````
-
-![image](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_2_1.png)
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_2_1.png" width="300" height="300" />
 
 ````matlab
 % Set Environment Values
@@ -260,4 +258,4 @@ ylim([0 10]);
 hold off
 ````
 
-![image](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_2_2.png)
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_2_2.png" width="300" height="300" />
