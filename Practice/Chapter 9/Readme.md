@@ -234,7 +234,7 @@ hold off
 
 [Exercise 9.5.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%209/Exercise_9_5.mlx) **Scalarization Method. Multiobjective optimization. Quadratic Problem. Nonlinear Problem** Consider the nonlinear multiobjective problem:
 
-<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_5_1.png" width="300" height="300" />
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_5_1.png"/>
 
 * a) Find the set of weak minima by means of the scalarization method. 
 * b) What is the set of minima?
