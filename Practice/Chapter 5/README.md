@@ -2,7 +2,7 @@
 
 ## Regression problems
 
-[Exercise 5.1.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_5_1.mlx) **Polynomial Regression** 
+[Exercise 5.1.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%205/Exercise_5_1.mlx) **Polynomial Regression** 
 Consider the data given:
 
 ````matlab
@@ -126,7 +126,7 @@ plot(x,y,'r.',x,y_1,'k-', x, y_2, 'b-', x, y_inf, 'g-');
 
 <img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_5_1_1.png" width="300" height="300" />
 
-[Exercise 5.2.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_5_2.mlx) **Polynomial Regression. Linear Epsilon-Support Vector Regression**. Apply the linear ε-SV regression model with ε = 0.5 to the training
+[Exercise 5.2.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%205/Exercise_5_2.mlx) **Polynomial Regression. Linear Epsilon-Support Vector Regression**. Apply the linear ε-SV regression model with ε = 0.5 to the training
 data given.
 
 ````matlab
