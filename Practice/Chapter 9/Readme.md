@@ -117,7 +117,7 @@ q = [zeros(p,1)
 
 [Exercise 9.4.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%209/Exercise_9_4.mlx) **Scalarization Method. Multiobjective optimization** Consider the linear multiobjective problem:
 
-<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_6.png" width="300" height="300" />
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_6.png" />
 
 Find the set of minima and weak minima by means of the scalarization method:
 
@@ -127,11 +127,8 @@ clear;
 clc;
 
 matlab.lang.OnOffSwitchState = 1;
-````
 
-<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_1.png" width="300" height="300" />
 
-````matlab
 % Plot Graph
 
 x1 = -10:0.1:10;
@@ -149,7 +146,8 @@ view(3)
 hold off
 ````
 
-<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_2.png" width="300" height="300" />
+
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_1.png" width="300" height="300" />
 
 ````matlab
 % 2D plot X1
@@ -157,7 +155,7 @@ x1 = x2;
 plot(x1,x2);
 ````
 
-<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_3.png" width="300" height="300" />
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_2.png" width="300" height="300" />
 
 ````matlab
 % 2D plot X2
@@ -165,7 +163,7 @@ x2 = -x1;
 plot(x1,x2);
 ````
 
-<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_4.png" width="300" height="300" />
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_3.png" width="300" height="300" />
 
 ````matlab
 % Feasible Area
@@ -185,7 +183,7 @@ plot([1 0],[-1 0],'-k');
 
 ````
 
-<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_5.png" width="300" height="300" />
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_4.png" width="300" height="300" />
 
 
 ````matlab
@@ -230,6 +228,9 @@ x1 = linprog(f,A,b, [], [], [], [], options);
 plot(x1(1), x1(2), 'bo');
 hold off
 ````
+
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_5.png" width="300" height="300" />
+
 
 
 
