@@ -232,7 +232,102 @@ hold off
 <img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_4_5.png" width="300" height="300" />
 
 
+[Exercise 9.5.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%209/Exercise_9_5.mlx) **Scalarization Method. Multiobjective optimization. Quadratic Problem. Nonlinear Problem** Consider the nonlinear multiobjective problem:
+
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_5_1.png" width="300" height="300" />
+
+* a) Find the set of weak minima by means of the scalarization method. 
+* b) What is the set of minima?
 
 
+````matlab
+close all;
+clear;
+clc;
+
+matlab.lang.OnOffSwitchState = 1;
+
+x1 = 0:0.1:10;
+x2 = 0:0.1:10;
+
+[X1, X2] = meshgrid(x1,x2);
+
+X3 = X1;
+X4 = X1.^2 + X2.^2 -2.*X1;
+
+surface(X1,X2,X3);
+hold on
+surface(X1,X2,X4);
+view(3);
+hold off
+````
+
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_5_2.png" width="300" height="300" />
+
+
+````matlab
+% 2D
+x4 = sqrt(-x1.^2 + 2.*x1);
+x3 = x1;
+
+plot(x1,x4);
+hold on
+plot(x1,x3);
+hold off
+````
+
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_5_3.png" width="300" height="300" />
+
+
+
+````matlab
+condition_x1 = X1((-X1<=0) & (-X2<=0) & (X1+X2<=2)); 
+condition_x2 = X2((-X1<=0) & (-X2<=0) & (X1+X2<=2));
+
+plot(condition_x1, condition_x2, 'b.');
+
+hold on
+
+Q = [2 0
+     0 2];
+
+c = [-2
+      0];
+
+A = [ -1  0
+       0 -1
+       1  1];
+
+b = [0
+     0
+     2];
+
+options = optimset('Display', 'off');
+
+for alpha = 0.001:0.001:0.999
+    Q_alpha = Q*alpha;
+    c_alpha = [1-3*alpha ; 0];
+    x = quadprog(Q_alpha, c_alpha, A,b,[],[],[],[],[],options);
+    plot(x(1), x(2), 'r.');
+end
+
+% Alpha 0
+alpha = 0;
+Q_alpha = Q*alpha;
+c_alpha = [1-3*alpha ; 0];
+x = quadprog(Q_alpha, c_alpha, A,b,[],[],[],[],[],options);
+plot(x(1), x(2), 'ro');
+
+% Alpha 1
+alpha = 1;
+Q_alpha = Q*alpha;
+c_alpha = [1-3*alpha ; 0];
+x = quadprog(Q_alpha, c_alpha, A,b,[],[],[],[],[],options);
+plot(x(1), x(2), 'go');
+
+hold off
+````
+
+<img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_9_5_4.png" width="300" height="300" />
 
 
