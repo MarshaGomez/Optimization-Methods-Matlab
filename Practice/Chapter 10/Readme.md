@@ -71,7 +71,8 @@ x = solution(1:m)
 y = lambda.ineqlin
 ````
 
-[Exercise 10.5.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%2010/Exercise_10_5.mlx) **Merit Function** Consider the following bimatrix game:
+## 10.5 Merit Function
+[Exercise 10.5.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%2010/Exercise_10_5.mlx) Consider the following bimatrix game:
 
 
 $$ C_{1} = \begin{pmatrix}
