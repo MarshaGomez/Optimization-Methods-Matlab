@@ -21,21 +21,21 @@
   </tr>
    <tr>
     <th>L</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
   </tr>
    <tr>
     <th>C</th>
-    <th>3</th>
-    <th>-2</th>
-    <th>3</th>
+    <td>3</td>
+    <td>-2</td>
+    <td>3</td>
   </tr>
    <tr>
     <th>R</th>
-    <th>3</th>
-    <th>2</th>
-    <th>1</th>
+    <td>3</td>
+    <td>2</td>
+    <td>1</td>
   </tr>
 </table>
 
