@@ -1,6 +1,6 @@
 # Chapter 10. Noncooperative Game Theory 
 
-## 10.2 Penalty Kick
+## Penalty Kick
 [Exercise 10.2.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%2010/Exercise_10_2.mlx) Consider the following matrix game::
 
 <table>
@@ -71,7 +71,7 @@ x = solution(1:m)
 y = lambda.ineqlin
 ````
 
-## 10.5 Merit Function
+## Merit Function
 [Exercise 10.5.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%2010/Exercise_10_5.mlx) Consider the following bimatrix game:
 
 
