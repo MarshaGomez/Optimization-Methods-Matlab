@@ -1,6 +1,6 @@
 # Chapter 10. Noncooperative Game Theory 
 
-## Penalty Kick
+## 10.2 Penalty Kick
 [Exercise 10.2.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%2010/Exercise_10_2.mlx) Consider the following matrix game::
 
 <table>
