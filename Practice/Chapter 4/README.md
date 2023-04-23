@@ -260,7 +260,8 @@ hold off
 
 <img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_2_2.png" width="300" height="300" />
 
-[Exercise 4.4](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_4.mlx) **Linear SVM. Dual Model. Soft Margins** Find the separating hyperplane for the data set given by solving the dual problem (5) with C = 10. What is the value of λi corresponding to the misclassified points?
+## 4.4 Linear SVM. Dual Model. Soft Margins
+[Exercise 4.4](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_4.mlx) Find the separating hyperplane for the data set given by solving the dual problem (5) with C = 10. What is the value of λi corresponding to the misclassified points?
 
 ````matlab
 close all;
@@ -424,8 +425,8 @@ Lambda Values
 | 10.00 | 0.00 |
 | 10.00 | |
 
- 
-[Exercise 4.5.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_5.mlx) **Nonlinear SVM. Dual Model** Find the optimal separating surface for the data set given using a Gaussian kernel with parameters C = 1 and gamma = 1.
+ ## 4.5 Nonlinear SVM. Dual Model
+[Exercise 4.5.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_5.mlx) Find the optimal separating surface for the data set given using a Gaussian kernel with parameters C = 1 and gamma = 1.
 
 ````matlab
 A = [0.0113    0.2713
