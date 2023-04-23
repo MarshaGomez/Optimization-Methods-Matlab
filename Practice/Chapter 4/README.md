@@ -1,8 +1,7 @@
-# Chapter 4
+# Chapter 4. Support Vector Machines for (supervised) classification problems
 
-## Support Vector Machines for (supervised) classification problems
-
-[Exercise 4.1.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_1.mlx) **Linear SVM. Primal Model** Find the separating hyperplane with maximum margin for the data set given:
+## 4.1 Linear SVM. Primal Model
+[Exercise 4.1.](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_1.mlx) Find the separating hyperplane with maximum margin for the data set given:
 
 ````matlab
 close all;
