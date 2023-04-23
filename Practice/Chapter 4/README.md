@@ -121,7 +121,8 @@ plot(x,u, "k-", x,v,"r-", x,vv, "b-");
 
 <img src="https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/img/Chapter_4_1_2.png" width="300" height="300" />
 
-[Exercise 4.2](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_2.mlx) **Linear SVM. Dual Model** Find the separating hyperplane with maximum margin for the data set given:
+## 4.2 Linear SVM. Dual Model 
+[Exercise 4.2](https://github.com/MarshaGomez/Optimization-Matlab-Exams/blob/master/Practice/Chapter%204/Exercise_4_2.mlx) Find the separating hyperplane with maximum margin for the data set given:
 
 ````matlab
 A = [0.4952    6.8088    
