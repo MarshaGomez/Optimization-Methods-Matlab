@@ -35,13 +35,13 @@ This project was created with the main object of create a complete repository wi
 - - - -
 ## Exercise 
 *   [Ch. 0. Introduction:](https://github.com/MarshaGomez/Optimization-Methods-Matlab/tree/master/Material/0-introduction.pdf)
-  * Solutions:
-  * [Ch. 1. Preliminaries on convex sets and convex functions:](https://github.com/MarshaGomez/Optimization-Methods-Matlab/tree/master/Material/1-convexity.pdf)
-  * Solutions:
+   *   Solutions:
+*   [Ch. 1. Preliminaries on convex sets and convex functions:](https://github.com/MarshaGomez/Optimization-Methods-Matlab/tree/master/Material/1-convexity.pdf)
+  *   Solutions:
 *   [Ch. 2. Existence of optimal solutions and optimality conditions:](https://github.com/MarshaGomez/Optimization-Methods-Matlab/tree/master/Material/2-existence_optimality.pdf)
-  * Solutions:
+   *   Solutions:
 *   [Ch. 3. Lagrangian duality:](https://github.com/MarshaGomez/Optimization-Methods-Matlab/tree/master/Material/3-duality.pdf)
-  * Solutions:
+   *   Solutions:
 *   [Ch. 4. Support Vector Machines for classification problems:](https://github.com/MarshaGomez/Optimization-Methods-Matlab/tree/master/Material/4-classification.pdf)
   * Solutions: 
     * 4.1.m [(Check on Github)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/wiki/4.-Support-Vector-Machines-for-classification-problems#41-linear-programming-primal-model) [(Download)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/raw/master/Practice/Chapter%204/Exercise_4_1.mlx) 
