@@ -36,8 +36,8 @@ This project was created with the main object of create a complete repository wi
 ## Exercise 
 *   [Ch. 1. Preliminaries on convex sets and convex functions:](https://github.com/MarshaGomez/Optimization-Methods-Matlab/tree/master/Material/1-convexity.pdf)
     *   Solutions:
-        *   1.1.m
-        *   1.2.m
+        *   1.1.m [(Check on Github)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/wiki/1.-Preliminaries-on-convex-sets-and-convex-functions#11-convexity) [(Download)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/raw/master/Practice/Chapter%201/Exercise_1_1.mlx) 
+        *   1.2.m [(Check on Github)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/wiki/1.-Preliminaries-on-convex-sets-and-convex-functions#12-convex-hull) [(Download)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/raw/master/Practice/Chapter%201/Exercise_1_2.mlx) 
         *   1.3.m
         *   1.4.m
         *   1.5.m
@@ -56,7 +56,7 @@ This project was created with the main object of create a complete repository wi
         *   1.18.m
 *   [Ch. 2. Existence of optimal solutions and optimality conditions:](https://github.com/MarshaGomez/Optimization-Methods-Matlab/tree/master/Material/2-existence_optimality.pdf)
     *   Solutions:
-        *   2.1.m
+        *   2.1.m [(Check on Github)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/wiki/2.-Existence-of-optimal-solutions-and-optimality-conditions#21-existence-of-global-optima-for-quadratic-programming-problems) [(Download)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/raw/master/Practice/Chapter%202/Exercise_2_1.mlx) 
         *   2.2.m
         *   2.3.m
         *   2.4.m
