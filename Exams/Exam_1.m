@@ -15,7 +15,7 @@ matlab.lang.OnOffSwitchState = 1;
 % On this problem, we have an objective function with Q indefinite and for the 
 % existence of the global optimal we can apply the Eaves theorem. 
 % 
-% $$\left\lbrace \begin{array}{ll}\mathrm{minimize} & \frac{1}{2}x^T Q\;x+q^T 
+% $$\left\lbrace \begin{array}{ll}\textrm{minimize} & \frac{1}{2}x^T Q\;x+q^T 
 % x\\s\ldotp t & A\;x\le b\end{array}\right.$$
 % 
 % The recession cone $\Omega$ is $\textrm{rec}\left(\Omega \right)=\left\lbrace 
@@ -53,15 +53,17 @@ matlab.lang.OnOffSwitchState = 1;
 % $A_i$ are positive semidefinite.
 
 % Objective Function
-Q = [-2 0
-      0 2];
+Q = [-4 0
+      0 4];
 
 % Inequality Constraints
 A = [4 0
      0 4];
 
-eig(Q)
-eig(A)
+fprintf('Eigen Values Objective Function:');
+display(eig(Q));
+fprintf('Eigen Values Contraints:');
+display(eig(A));
 
 %% 
 % In convex optimization, the objective functions should be concave and the 
@@ -184,13 +186,22 @@ hold off
 % The objective function is $f\left(x\right)=-x_1^2 +2x_1 +x_2^2 -2x_2$ . Let-s 
 % evaluate at point $x^{\star } =\left(0,0\right)$
 
-objective_function(0,0)
+fprintf('Objective Function at (0,0) : %i',objective_function(0,0));
 %% 
 % $$f\left(0,0\right)=-{\left(0\right)}_1^2 +2{\left(0\right)}_1 +{\left(0\right)}_2^2 
 % -2{\left(0\right)}_2 =0$$
 % 
 % We need to check the second-order partial derivates of the objective function. 
-% $f_{\textrm{xx}} =-2\;\;;\;\;f_{\textrm{yy}} =2$
+% $f_{\mathrm{xx}} =-2\;\;;\;\;f_{\mathrm{xy}} =0\;\;\;;\;\;\;f_{\mathrm{yx}} 
+% =0\;\;\;;\;\;\;f_{\mathrm{yy}} =2\;\;$We have a mixed second-order partial derivatives. 
+
+H = [-2 0
+      0 2];
+fprintf('Determinant: %i', det(H));
+%% 
+% The Determinant of the Hessian Matrix is negative. Therefore, the Hessian 
+% matrix is not positive definite, and we cannot conclude that the point (0,0) 
+% is a local minimum based on the second-order sufficient condition.
 % 
 % *e) Find all the solutions of the KKT system.*
 % 
@@ -203,13 +214,13 @@ objective_function(0,0)
 
 syms x1 x2 lambda1 lambda2
 equations = [-2*x1+2+2*lambda1*x1==0
-    2*x2-2+2*lambda2*x2==0
-    x1^2-4<=0
-    x2^2-4<=0
-    lambda1*(x1^2-4)==0
-    lambda2*(x2^2-4)==0
-    lambda1>=0
-    lambda2>=0]
+            2*x2-2+2*lambda2*x2==0
+            x1^2-4<=0
+            x2^2-4<=0
+            lambda1*(x1^2-4)==0
+            lambda2*(x2^2-4)==0
+            lambda1>=0
+            lambda2>=0]
 
 % Compute analytic solution of a symbolic equation
 solution = solve(equations,[sym('lambda1'),sym('lambda2'),sym('x1'),sym('x2')],...
@@ -253,7 +264,7 @@ x_local = A\b;
 % 0\;\mathrm{constraint}\;\mathrm{satisfied}\end{array}$$
 
 if (x_local(1)^2-4<=0) && (x_local(2)^2-4<=0)
-    fprintf("Local minima found (%d %d)", x_local')
+    fprintf("Local minima found: (%d %d)", x_local')
 end
 %% 
 % * Global minima
@@ -297,3 +308,40 @@ if (i)
     fprintf("Global minima found");
     display(M(i, :));
 end
+%% 
+% *g) Find the objective function and constraints of the Lagrangian dual problem.*
+% 
+% We can start with the Lagrangian Relaxation: $L\left(x,\lambda ,\mu \right)=f\left(x\right)+\sum_{i=1}^m 
+% \lambda_i g_i \left(x\right)+\sum_{j=1}^p \mu_j h_j \left(x\right)$
+% 
+% This original optimization problem with the form of Lagrangian Relaxation 
+% is as follows:
+% 
+% $$L\left(x_1 ,x_2 ,\lambda_1 ,\lambda_2 \right)=-x_1^2 +2x_1 +x_2^2 -2x_2 
+% +\lambda_1 \left(x_1^2 -4\right)+\lambda_2 \left(x_2^2 -4\right)$$
+
+syms x1 x2 lambda1 lambda2
+
+% Define the Objective Function and the Constraints
+objectiveFunction = -x1.^2 + 2.*x1 + x2.^2 - 2.*x2;
+constraint1 = x1.^2 - 4;
+constraint2 = x2.^2 - 4;
+
+lagrangian = objectiveFunction + lambda1*(constraint1) + lambda2*(constraint2);
+
+% Differentiate with respect to x1, x2, lambda1, lambda2
+d_x1 = diff(lagrangian, x1);
+d_x2 = diff(lagrangian, x2);
+d_lambda1 = diff(lagrangian, lambda1);
+d_lambda2 = diff(lagrangian, lambda2);
+
+fprintf("Lagrangian Dual Optimizatio Problem");
+% Solve the Lagrangian Dual
+equations = [d_x1 == 0
+             d_x2 == 0
+             d_lambda1 <= 0
+             d_lambda2 <= 0
+             lambda1>=0
+             lambda2>=0]
+
+sol = solve(equations)
