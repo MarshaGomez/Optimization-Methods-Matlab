@@ -1,7 +1,7 @@
 %% 
 % Consider the following optimization problem:
 % 
-% $$\left\lbrace \begin{array}{ll}\textrm{minimize} & -x_1^2 +2x_1 +x_2^2 -2x_2 
+% $$\left\lbrace \begin{array}{ll}\mathrm{minimize} & -x_1^2 +2x_1 +x_2^2 -2x_2 
 % \\s\ldotp t & x_1^2 -4\le 0\\\; & x_2^2 -4\le 0\end{array}\right.$$
 
 close all;
@@ -15,7 +15,7 @@ matlab.lang.OnOffSwitchState = 1;
 % On this problem, we have an objective function with Q indefinite and for the 
 % existence of the global optimal we can apply the Eaves theorem. 
 % 
-% $$\left\lbrace \begin{array}{ll}\textrm{minimize} & \frac{1}{2}x^T Q\;x+q^T 
+% $$\left\lbrace \begin{array}{ll}\mathrm{minimize} & \frac{1}{2}x^T Q\;x+q^T 
 % x\\s\ldotp t & A\;x\le b\end{array}\right.$$
 % 
 % The recession cone $\Omega$ is $\textrm{rec}\left(\Omega \right)=\left\lbrace 
@@ -45,7 +45,7 @@ matlab.lang.OnOffSwitchState = 1;
 %% 
 % * Constraints: 
 % * $g_1 \left(x\right)=x_1^2 -4\le 0$ 
-% * $g_2 \left(x\right)=x_1^2 -4\le 0$
+% * $g_2 \left(x\right)=x_2^2 -4\le 0$
 %% 
 % The constraints in a quadratic convex minimization is presented on the form: 
 % $g_i \left(x\right)=\frac{1}{2}x^T A_i x+{a_i }^T x+c_i \le 0\;;\;\forall i=1,\ldotp 
@@ -53,19 +53,15 @@ matlab.lang.OnOffSwitchState = 1;
 % $A_i$ are positive semidefinite.
 
 % Objective Function
-Q = [-4 0
-      0 4];
+Q = [-2 0
+      0 2];
 
 % Inequality Constraints
-A1 = [4 0
-      0 0];
-
-A2 = [0 0
-      0 4];
+A = [4 0
+     0 4];
 
 eig(Q)
-eig(A1)
-eig(A2)
+eig(A)
 
 %% 
 % In convex optimization, the objective functions should be concave and the 
@@ -121,6 +117,7 @@ contour(X1, X2, X3, 20, 'LineWidth', 1.5);
 hold on;
 
 % Plot the feasible region
+
 fill([x1 fliplr(x1)], [C1 fliplr(-C1)], 'r', 'FaceAlpha', 0.3);
 fill([C2 fliplr(-C2)],[x2 fliplr(x2)], 'r', 'FaceAlpha', 0.3);
 
@@ -147,11 +144,11 @@ hold off
 % 
 % Theorem - Sufficient conditions for ACQ
 %% 
-% * (Linear independence of the gradient of active constraints): If $\overline{x} 
-% \;\epsilon \;\Omega$ and the vectors are independent, then ACQ holds at $\overline{x}$:
+% * (Linear independence of the gradient of active constraints): If $\bar{x} 
+% \;\epsilon \;\Omega$ and the vectors are independent, then ACQ holds at $\bar{x}$:
 %% 
-% $$\left\lbrace \begin{array}{ll}\nabla g_i \left(\overline{x} \right) & \mathrm{for}\;i\;\epsilon 
-% \;A\left(\overline{x} \right)\\\nabla h_j \left(\overline{x} \right) & \mathrm{for}\;j=1,\ldotp 
+% $$\left\lbrace \begin{array}{ll}\nabla g_i \left(\bar{x} \right) & \textrm{for}\;i\;\epsilon 
+% \;A\left(\bar{x} \right)\\\nabla h_j \left(\bar{x} \right) & \textrm{for}\;j=1,\ldotp 
 % \ldotp \ldotp ,p\end{array}\right.$$
 % 
 % 
@@ -166,8 +163,6 @@ hold off
 %% 
 % On this exercise the conditions are as follows:
 % 
-% 
-% 
 % $$\left\lbrace \begin{array}{ll}-2x_1 +2+2\lambda_1 x_1  & =0\\2x_2 -2+2\lambda_2 
 % x_2  & =0\\x_1^2 -4 & \le 0\\x_2^2 -4 & \le 0\\\lambda_1 \left(x_1^2 -4\right) 
 % & =0\\\lambda_2 \left(x_2^2 -4\right) & =0\\\lambda_1  & \ge 0\\\lambda_2  & 
@@ -180,3 +175,125 @@ hold off
 % 
 % With this observations, we can conclude that the Abadie Constraint Qualification 
 % holds at any feasible point for the given optimization problem.
+% 
+% *d) Is the point (0, 0) a local minimum? Why?*
+% 
+% We need to understand the function at that point $x^{\star } =\left(0,0\right)$ 
+% and examine the behavior of the objective function in the vicinity of that point. 
+% 
+% The objective function is $f\left(x\right)=-x_1^2 +2x_1 +x_2^2 -2x_2$ . Let-s 
+% evaluate at point $x^{\star } =\left(0,0\right)$
+
+objective_function(0,0)
+%% 
+% $$f\left(0,0\right)=-{\left(0\right)}_1^2 +2{\left(0\right)}_1 +{\left(0\right)}_2^2 
+% -2{\left(0\right)}_2 =0$$
+% 
+% We need to check the second-order partial derivates of the objective function. 
+% $f_{\textrm{xx}} =-2\;\;;\;\;f_{\textrm{yy}} =2$
+% 
+% *e) Find all the solutions of the KKT system.*
+% 
+% As we see before, the KKT system is as follow:
+% 
+% $$\left\lbrace \begin{array}{ll}-2x_1 +2+2\lambda_1 x_1  & =0\\2x_2 -2+2\lambda_2 
+% x_2  & =0\\x_1^2 -4 & \le 0\\x_2^2 -4 & \le 0\\\lambda_1 \left(x_1^2 -4\right) 
+% & =0\\\lambda_2 \left(x_2^2 -4\right) & =0\\\lambda_1  & \ge 0\\\lambda_2  & 
+% \ge 0\end{array}\right.$$ 
+
+syms x1 x2 lambda1 lambda2
+equations = [-2*x1+2+2*lambda1*x1==0
+    2*x2-2+2*lambda2*x2==0
+    x1^2-4<=0
+    x2^2-4<=0
+    lambda1*(x1^2-4)==0
+    lambda2*(x2^2-4)==0
+    lambda1>=0
+    lambda2>=0]
+
+% Compute analytic solution of a symbolic equation
+solution = solve(equations,[sym('lambda1'),sym('lambda2'),sym('x1'),sym('x2')],...
+    "Real",true,...
+    "IgnoreAnalyticConstraints",true,...
+    "IgnoreProperties",true);
+% Display symbolic solution returned by solve
+displaySymSolution(solution);
+
+variables = [x1,x2,lambda1,lambda2];
+
+[x1,x2,lambda1,lambda2] = solve(equations, variables)
+
+%% 
+% *f) Find local minima and global minima.*
+%% 
+% * Local minima
+%% 
+% To find the local minima, we need to find the critical points of the objective 
+% function within the feasible region. These critical points occur where the gradient 
+% of the objective function is zero or undefined and lie within the feasible region. 
+% $\frac{\partial f}{\partial x_1 }=0\;\;;\;\;\frac{\partial f}{\partial x_2 }=0$
+% 
+% $$\begin{array}{l}\nabla f\left(x\right)=\left(-2x_1 +2\;,\;2x_2 -2\right)=0\\-2x_1 
+% +2\;\;=\;0\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;2x_2 -2=0\\x_1 =1\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;x_2 
+% =1\end{array}$$
+
+A = [-2 0
+      0 2];
+b = [-2
+      2];
+
+x_local = A\b;
+%% 
+% Next, we need to check if the critical point lies within the feasible region. 
+% $x^{\star } =\left(1,1\right)$ satisfies both constraints: $g_1 \left(x\right)\le 
+% 0$ and $g_2 \left(x\right)\le 0$
+% 
+% $$\begin{array}{l}x^{\star } =\left(1,1\right)\\x_1^2 -4\le 0\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;{\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;x}_2^2 
+% -4\le 0\\\left(1\right)-4\le 0\;\;\mathrm{constraint}\;\mathrm{satisfied}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\left(1\right)-4\le 
+% 0\;\mathrm{constraint}\;\mathrm{satisfied}\end{array}$$
+
+if (x_local(1)^2-4<=0) && (x_local(2)^2-4<=0)
+    fprintf("Local minima found (%d %d)", x_local')
+end
+%% 
+% * Global minima
+%% 
+% To find the global minima, we need to consider the boundary of the feasible 
+% region and check the objective function values at those points. $g_1 \left(x\right)=0$ 
+% and $g_2 \left(x\right)=0$
+% 
+% $$x_1^2 -4=0\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;x_2^2 -4=0$$
+
+syms x1 x2
+
+% g1 = 0
+equations = x1^2-4==0;
+variables = [x1, x2];
+
+[x, y] = solve(equations,variables);
+
+M = [x  y];
+
+% g2 = 0
+equations = x2^2-4==0;
+variables = [x1, x2];
+
+[x, y] = solve(equations,variables);
+
+M = [M
+     x  y]
+%% 
+% Now, we need to check the objective function values at those points M
+
+n = size(M,1);
+evaluation = zeros(n,1);
+for i = 1:n     
+    evaluation(i) = objective_function(M(i, 1), M(i, 2));
+end
+
+[~, i] = min(evaluation, [], 'all');
+
+if (i)
+    fprintf("Global minima found");
+    display(M(i, :));
+end
