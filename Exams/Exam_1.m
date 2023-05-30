@@ -1,7 +1,7 @@
 %% 
 % Consider the following optimization problem:
 % 
-% $$\left\lbrace \begin{array}{ll}\mathrm{minimize} & -x_1^2 +2x_1 +x_2^2 -2x_2 
+% $$\left\lbrace \begin{array}{ll}\textrm{minimize} & -x_1^2 +2x_1 +x_2^2 -2x_2 
 % \\s\ldotp t & x_1^2 -4\le 0\\\; & x_2^2 -4\le 0\end{array}\right.$$
 
 close all;
@@ -57,13 +57,18 @@ Q = [-4 0
       0 4];
 
 % Inequality Constraints
-A = [4 0
-     0 4];
+A1 = [4 0
+      0 0];
+
+A2 = [0 0
+      0 4];
 
 fprintf('Eigen Values Objective Function:');
 display(eig(Q));
-fprintf('Eigen Values Contraints:');
-display(eig(A));
+fprintf('Eigen Values Contraints 1:');
+display(eig(A1));
+fprintf('Eigen Values Contraints 2:');
+display(eig(A2));
 
 %% 
 % In convex optimization, the objective functions should be concave and the 
@@ -137,6 +142,7 @@ ylim([-4 4]);
 
 % Display the plot
 hold off
+
 %% 
 % *c) Does the Abadie constraints qualification hold in any feasible point? 
 % Why?*
@@ -192,8 +198,8 @@ fprintf('Objective Function at (0,0) : %i',objective_function(0,0));
 % -2{\left(0\right)}_2 =0$$
 % 
 % We need to check the second-order partial derivates of the objective function. 
-% $f_{\mathrm{xx}} =-2\;\;;\;\;f_{\mathrm{xy}} =0\;\;\;;\;\;\;f_{\mathrm{yx}} 
-% =0\;\;\;;\;\;\;f_{\mathrm{yy}} =2\;\;$We have a mixed second-order partial derivatives. 
+% $f_{\textrm{xx}} =-2\;\;;\;\;f_{\textrm{xy}} =0\;\;\;;\;\;\;f_{\textrm{yx}} 
+% =0\;\;\;;\;\;\;f_{\textrm{yy}} =2\;\;$We have a mixed second-order partial derivatives. 
 
 H = [-2 0
       0 2];
@@ -260,8 +266,8 @@ x_local = A\b;
 % 0$ and $g_2 \left(x\right)\le 0$
 % 
 % $$\begin{array}{l}x^{\star } =\left(1,1\right)\\x_1^2 -4\le 0\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;{\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;x}_2^2 
-% -4\le 0\\\left(1\right)-4\le 0\;\;\mathrm{constraint}\;\mathrm{satisfied}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\left(1\right)-4\le 
-% 0\;\mathrm{constraint}\;\mathrm{satisfied}\end{array}$$
+% -4\le 0\\\left(1\right)-4\le 0\;\;\textrm{constraint}\;\textrm{satisfied}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\left(1\right)-4\le 
+% 0\;\textrm{constraint}\;\textrm{satisfied}\end{array}$$
 
 if (x_local(1)^2-4<=0) && (x_local(2)^2-4<=0)
     fprintf("Local minima found: (%d %d)", x_local')
