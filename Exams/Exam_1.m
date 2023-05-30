@@ -4,6 +4,7 @@
 % $$\left\lbrace \begin{array}{ll}\textrm{minimize} & -x_1^2 +2x_1 +x_2^2 -2x_2 
 % \\s\ldotp t & x_1^2 -4\le 0\\\; & x_2^2 -4\le 0\end{array}\right.$$
 
+clear global;
 close all;
 clear;
 clc;

@@ -5,6 +5,7 @@
 % +2x_2 x_3 +3x_3^2 +x_3 x_4 +2x_4^2 -5x_1 -4x_3 +3x_4 \\x\;\epsilon \;\Re^4  
 % & \;\end{array}\right.$$
 
+clear global;
 close all;
 clear;
 clc;
