@@ -79,3 +79,5 @@ This project was created with the main object of create a complete repository wi
 
 ## Exams
 * Exam_1.m [(Check on Github)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/wiki/Exam-1) [(Download)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/raw/master/Exams/Exam_1.mlx)
+* Exam_2.m [(Check on Github)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/wiki/Exam-2) [(Download)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/raw/master/Exams/Exam_2.mlx)
+* Exam_3.m [(Check on Github)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/wiki/Exam-3) [(Download)](https://github.com/MarshaGomez/Optimization-Methods-Matlab/raw/master/Exams/Exam_3.mlx)
