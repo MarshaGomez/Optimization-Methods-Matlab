@@ -260,4 +260,61 @@ while (norm(g) > tolerance)
 
     v = (1/2)*x'*Q*x + q'*x;
     g = Q*x + q;
+end  
+
+%% 
+% Newthon with line search:
+%%
+% 
+%   % Newthon with line search
+%   Choose x0 i=0
+%   Set alpha gamma tbar
+%   while (g~=0)
+%      [search direction] d = -H\g;
+%      t = tbar;
+%      while f(x + t*d) > f(x) + alpha*t*d'*g
+%         t = gamma*t;
+%      end
+%      x = x + t*d
+%      i = i + 1;
+%   end
+%
+
+clear x v g H
+
+x0 = [0
+      0
+      0
+      0];
+
+i = 0;
+x = x0;
+tbar = 1;
+alpha = 0.1;
+gamma = 0.9;
+
+[v, g, H] = f(x, Q, q);
+fprintf("\n \n Newton method Armijo inexact line search \n");
+fprintf("i \t f(x) \t \t \t ||grad f(x)|| \n");
+fprintf("%i \t %2.10f \t \t %2.10f \n", i, v, norm(g));
+    
+while (norm(g) < tolerance)
+    % search direction
+    d = -H\g;
+    t = tbar;
+
+    % Armijo inexact line search
+    while f(x+t*d, Q,q) > v+alpha*t*d'*g
+        t = gamma * t;
+    end
+    x = x + t*d;
+    i = i + 1;
+    
+    [v,g,H] = f(x, Q, q);
+end
+%%
+function [v, g, H] = f(x, Q, q)
+    v = (1/2)*x'*Q*x + q'*x;
+    g = Q*x + q;
+    H = Q;
 end
