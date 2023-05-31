@@ -263,10 +263,10 @@ while (norm(g) > tolerance)
 end  
 
 %% 
-% Newthon with line search:
+% Newton Armijo inexact line search:
 %%
 % 
-%   % Newthon with line search
+%   % Newton method Armijo inexact line search
 %   Choose x0 i=0
 %   Set alpha gamma tbar
 %   while (g~=0)
